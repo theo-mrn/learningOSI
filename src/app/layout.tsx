@@ -4,13 +4,12 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Toaster } from "@/components/ui/sonner"
 import { Providers } from "@/components/providers/Providers"
-import { ThemeProvider } from "@/components/providers/theme-provider"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Theo MORIN | Développeur Web",
-  description: "Portfolio de Théo MORIN, développeur web spécialisé en React et Next.js",
+  title: "NetLearn | Apprenez les Réseaux",
+  description: "Plateforme d'apprentissage interactive pour maîtriser les technologies réseau",
 }
 
 export default function RootLayout({
@@ -25,14 +24,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <Providers>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         </Providers>
         <Toaster />
       </body>
